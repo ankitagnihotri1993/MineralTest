@@ -1,0 +1,163 @@
+{
+	"title": "Mineral Tree",
+	"description": "magic software component for the Mineral Tree",
+	"docsUrl": "",
+	"credentials": {
+		"fields": {
+			"username": {
+				"label": "User Name",
+				"required": true,
+				"viewClass": "TextFieldWithNoteView"
+			},
+			"password": {
+				"label": "Password",
+				"required": true,
+				"viewClass": "PasswordFieldView"
+			},
+			"endPointURL": {
+				"label": "End Point URL",
+				"required": true,
+        "viewClass": "TextFieldWithNoteView"
+		},
+		"companyId": {
+			"label": "Company Id",
+			"required": true,
+	"viewClass": "TextFieldWithNoteView"
+		}
+     	}
+	},
+  "triggers": {
+
+    "getInvoiceList": {
+      "main": "./lib/triggers/invoice/getInvoiceList.js",
+      "type": "polling",
+      "title": "Get Invoice List",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "getPaymentList": {
+      "main": "./lib/triggers/payment/getPaymentList.js",
+      "type": "polling",
+      "title": "Get Payment List",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "getVendorList": {
+      "main": "./lib/triggers/vendor/getVendorList.js",
+      "type": "polling",
+      "title": "Get Vendor List",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "getPurchaseOrder": {
+      "main": "./lib/triggers/purchaseOrder/getPurchaseOrder.js",
+      "type": "polling",
+      "title": "Get Purchase Order",
+      "metadata": {
+        "out": {}
+      }
+    }
+  },
+  "actions": {
+    "createUpdateVendor": {
+      "main": "./lib/actions/vendor/createUpdateVendor.js",
+      "title": "create Or Update Vendor",
+      "metadata": {
+        "in": "./lib/schemas/Vendor/createVendor.in.json",
+        "out": "./lib/schemas/Vendor/createVendor.out.json"
+      }
+    },
+    "createGLAccount": {
+      "main": "./lib/actions/glaccount/createGLAccount.js",
+      "title": "create GL Account",
+      "metadata": {
+        "in": "./lib/schemas/GLAccount/createGLAccount.in.json",
+        "out": "./lib/schemas/GLAccount/createGLAccount.out.json"
+      }
+    },
+    "createPaymentTerm": {
+      "main": "./lib/actions/payment/createPaymentTerm.js",
+      "title": "create Payment Term",
+      "metadata": {
+        "in": "./lib/schemas/Terms/PaymentTerm.in.json",
+        "out": "./lib/schemas/Terms/PaymentTerm.out.json"
+      }
+    },
+    "createClassification": {
+      "main": "./lib/actions/classification/createClassification.js",
+      "title": "create Classification",
+      "metadata": {
+        "in": "./lib/schemas/Classification/createClassification.in.json",
+        "out": "./lib/schemas/Classification/createClassification.out.json"
+      }
+    },
+    "createUpdateInvoice": {
+      "main": "./lib/actions/invoice/createUpdateInvoice.js",
+      "title": "create Or Update Invoice",
+      "metadata": {
+        "in": "./lib/schemas/Invoice/createUpdateInvoice.in.json",
+        "out": "./lib/schemas/Invoice/createUpdateInvoice.out.json"
+      }
+    },
+    "updateCaliberInvoiceBillId": {
+      "main": "./lib/actions/invoice/updateCaliberBillId.js",
+      "title": "Update Caliber Bill Id",
+      "metadata": {
+        "in": "./lib/schemas/Invoice/updateCaliberInvoiceBillId.in.json",
+        "out": "./lib/schemas/Invoice/createUpdateInvoice.out.json"
+      }
+    },
+    "createSusidiary": {
+      "main": "./lib/actions/subsidiary/createSubsidiary.js",
+      "title": "create Subsidiary",
+      "metadata": {
+        "in": "./lib/schemas/Subsidiary/createSubsidiary.in.json",
+        "out": "./lib/schemas/Subsidiary/createSubsidiary.out.json"
+      }
+    },
+    "createBulkSubsidiary": {
+      "main": "./lib/actions/subsidiary/createBulkSubsidiary.js",
+      "title": "create Bulk Subsidiary",
+      "metadata": {
+        "in": "./lib/schemas/Subsidiary/createBulkSubsidiary.in.json",
+        "out": "./lib/schemas/Subsidiary/createBulkSubsidiary.out.json"
+      }
+    },
+    "searchObject": {
+      "main": "./lib/actions/search/searchObject.js",
+      "title": "Search Object",
+      "metadata": {
+        "in": "./lib/schemas/SearchObject/searchObject.in.json",
+        "out": "./lib/schemas/SearchObject/searchObject.out.json"
+      }
+    },
+    "createInvoicePayment": {
+      "main": "./lib/actions/payment/createInvoicePayment.js",
+      "title": "create Invoice Payment",
+      "metadata": {
+        "in": "./lib/schemas/Payment/Payment.in.json",
+        "out": "./lib/schemas/Payment/Payment.out.json"
+      }
+    },
+    "createPaymentMethod": {
+      "main": "./lib/actions/payment/createPaymentMethod.js",
+      "title": "create Payment Method",
+      "metadata": {
+        "in": "./lib/schemas/PaymentMethod/createPaymentMethod.in.json",
+        "out": "./lib/schemas/PaymentMethod/createPaymentMethod.out.json"
+      }
+    },
+    "createPurchaseOrder": {
+      "main": "./lib/actions/purchaseOrder/createPurchaseOrder.js",
+      "title": "Create Or Update Purchase Order",
+      "metadata": {
+        "in": "./lib/schemas/PurchaseOrder/createPurchaseOrder.in.json",
+        "out": "./lib/schemas/PurchaseOrder/createPurchaseOrder.out.json"
+      }
+    }
+  }
+}
+

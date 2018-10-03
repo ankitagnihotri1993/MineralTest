@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "classification": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "required":true,
+          "title": "The Id",
+          "default": "",
+          "examples": [
+            "Id of the classification - only for update"
+          ]
+        },
+        "subsidiaries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "required":true,
+                "title": "The Id",
+                "default": "",
+                "examples": [
+                  "List of the subsidiaries."
+                ]
+              }
+            }
+          }
+        },
+        "externalId": {
+          "type": "string",
+          "required":true,
+          "title": "The Externalid",
+          "default": "",
+          "examples": [
+            "External id of classification - cannot be updated"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "required":true,
+          "title": "The Name",
+          "default": "",
+          "examples": [
+            "Name of the class"
+          ]
+        },
+        "active": {
+          "type": "boolean",
+          "required":true,
+          "title": "The Active",
+          "default": false,
+          "examples": [
+            true
+          ]
+        }
+      }
+    }
+  }
+}
